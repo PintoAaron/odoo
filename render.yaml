@@ -1,0 +1,21 @@
+# Exported from Render on 2024-09-08T00:27:20Z
+databases:
+- name: inventorydb
+  databaseName: inventory_5t3z
+  user: developer
+  plan: free
+  region: oregon
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "16"
+services:
+- type: web
+  name: PintoShop
+  runtime: python
+  repo: https://github.com/PintoAaron/odoo
+  plan: free
+  region: oregon
+  buildCommand: pip install -r 17.0/requirements.txt
+  startCommand: 17.0/odoo-bin --dev=xml,qweb --config=config/odoo.17.cfg
+version: "1"
